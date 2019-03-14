@@ -22,9 +22,26 @@ namespace MyRecursiveAppInCSharp
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void btn_send_Click(object sender, EventArgs e)
         {
+            int number = System.Convert.ToInt32(txtInput.Text);
+            int retour = factorial(number);
+            lblResult.Text = "Resultat : " + retour.ToString();
+        }
 
+        private int factorial(int nombre)
+        {
+            int n = 1;
+            if (nombre > 1)
+            {
+                n = nombre*factorial((nombre-1));
+
+                return n;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }
